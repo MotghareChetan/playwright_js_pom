@@ -3,11 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "npx playwright test",
+    "test:single": "npx playwright test login.spec.js --project=chromium",
+    "report": "npx playwright show-report",
+    "locator": "npx playwright codegen"
+  },
   "keywords": [],
-  "author": "",
+  "author": "Chetan Motghare",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.31.1"
+    "@playwright/test": "^1.31.1",
+    "allure-playwright": "^2.0.0"
   }
 }
