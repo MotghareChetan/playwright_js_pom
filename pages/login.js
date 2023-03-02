@@ -25,7 +25,8 @@ class LoginPage {
     }
 
     async gotoLoginPage() {
-        webaction.navigateToURL(testConfig.url)
+       // webaction.navigateToURL(testConfig.url)
+        webaction.navigateToURL("https://letcode.in/")
         await expect(this.page).toHaveTitle("LetCode with Koushik")
     }
 
