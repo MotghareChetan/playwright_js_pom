@@ -7,6 +7,7 @@ export class Header {
 
     constructor(page) {
         this.page = page
+        // @ts-ignore
         webaction = new WebActions(this.page)
         this.WORK_SPACE = `#testing`
         this.COURSES = `text= Courses`

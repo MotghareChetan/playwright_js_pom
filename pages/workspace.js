@@ -1,6 +1,6 @@
 import { WebActions } from '../lib/webAction';
 
-let webaction = new WebActions;
+let webaction = WebActions;
 
 export class WorkSpace {
 

@@ -13,7 +13,7 @@ const { defineConfig, devices } = require('@playwright/test');
 module.exports = defineConfig({
   testDir: './tests',
   /* Maximum time one test can run for. */
-  timeout: 50 * 1000,
+  timeout: 70 * 1000,
   expect: {
     /**
      * Maximum time expect() should wait for the condition to be met.
@@ -30,16 +30,19 @@ module.exports = defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: [['html'], [
+  reporter: 'html',/* [
     "allure-playwright",
     {
       detail: true,
       outputFolder: "my-allure-results",
       suiteTitle: false,
     },
-  ],],
+  ],],*/
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
+    launchOptions:{
+      slowMo:1500
+    },
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
     actionTimeout: 0,
     /* Base URL to use in actions like `await page.goto('/')`. */
@@ -56,7 +59,7 @@ module.exports = defineConfig({
       use: {
         ...devices['Desktop Chrome'],
         headless: false,
-        screenshot: "only-on-failure",
+        screenshot: "on",
         viewport: undefined
       },
 

@@ -6,9 +6,10 @@ import { WebActions } from '../lib/webAction';
 let webaction = new WebActions;
 
 class LoginPage {
-     
+
     constructor(page) {
         this.page = page
+        // @ts-ignore
         webaction = new WebActions(this.page)
         this.ENTER_LOGINPAGE = `text=Log in`
         this.EMAIL_TEXTBOX = "input[name='email']"
@@ -25,7 +26,7 @@ class LoginPage {
     }
 
     async gotoLoginPage() {
-       // webaction.navigateToURL(testConfig.url)
+        // webaction.navigateToURL(testConfig.url)
         webaction.navigateToURL("https://letcode.in/")
         await expect(this.page).toHaveTitle("LetCode with Koushik")
     }
