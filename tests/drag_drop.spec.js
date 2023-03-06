@@ -19,7 +19,11 @@ test.describe("Drag and Drop", () => {
         await page.mouse.down();
         await page.locator('#droppable').hover();
         await page.mouse.up();
+    })
 
+    test.only("Slider", async ({ page }) => {
+        await page.locator('text=AUI - 5').click();
+        
 
 
     })
