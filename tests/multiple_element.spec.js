@@ -20,17 +20,14 @@ test.describe("Multiple element and Loop", () => {
         //const repos = repolink.allInnerTexts();
         console.log(repolink.length)
 
-        for(let i = 0; i<repolink.length;i++){
+        for (let i = 0; i < repolink.length; i++) {
             console.log(repolink[i])
 
         }
 
-       
-
-        
-        
-
     })
+
+
 })
 
 
