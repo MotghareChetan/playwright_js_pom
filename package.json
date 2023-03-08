@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npx playwright test",
-    "single": "npx playwright test table.spec.js --project=chromium",
+    "single": "npx playwright test filehandling.spec.js --project=chromium",
     "report": "npx playwright show-report",
     "locator": "npx playwright codegen"
   },
