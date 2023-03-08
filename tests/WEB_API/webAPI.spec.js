@@ -24,7 +24,7 @@ test.describe("Test suit", () => {
 
     test('Login Test', async ({ page }) => {
 
-       await page.addInitScript(value => {
+        await page.addInitScript(value => {
             window.localStorage.setItem('token', value);
         }, token);
         console.log("API TOKEN :-> " + token)
