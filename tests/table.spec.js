@@ -42,22 +42,33 @@ test.describe("TABLE", () => {
         const rows = await tbody.locator("tr");
         const rowCount = await rows.count();
         console.log(rowCount);
+       
+        await page.waitForTimeout(2000)
 
-        for (let i = 0; i < rowCount; i++) {
+        /*for (let i = 0; i < rowCount; i++) {
             const row = await rows.nth(i);
-            const td = await row.locator("td");
+            const td = await row.locator("td");z
             for (let j = 0; j < await td.count(); j++) {
                 if (await td.nth(j).textContent() == "Raj") {
                     console.log(await td.nth(2).textContent());
                     await td.last().locator("input").check();
-
                 }
-
             }
+        }*/
+
+        const findName = rows.filter({
+            has:page.locator("td"),
+            hasText:"Man"
+        });
+
+        await findName.locator("input").check()
 
 
-        }
+
+
 
 
     })
 })
+
+
