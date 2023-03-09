@@ -40,8 +40,8 @@ module.exports = defineConfig({
   ],],*/
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    launchOptions:{
-      slowMo:1500
+    launchOptions: {
+      slowMo: 1500
     },
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
     actionTimeout: 0,
@@ -55,36 +55,50 @@ module.exports = defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium',
+      name: 'Desktop chrome',
       use: {
         ...devices['Desktop Chrome'],
         headless: false,
         screenshot: "on",
-        viewport: {width:1536,height:792}
-        
+        viewport: { width: 1536, height: 792 }
+
       },
+
 
     },
 
-    // {
-    //   name: 'firefox',
-    //   use: { ...devices['Desktop Firefox'] },
-    // },
+    {
+      name: 'firefox',
+      use: {
+        ...devices['Desktop Firefox'],
+        headless: false,
+        screenshot: "on",
+      },
+    },
 
     // {
     //   name: 'webkit',
     //   use: { ...devices['Desktop Safari'] },
     // },
 
-    /* Test against mobile viewports. */
-    // {
-    //   name: 'Mobile Chrome',
-    //   use: { ...devices['Pixel 5'] },
-    // },
-    // {
-    //   name: 'Mobile Safari',
-    //   use: { ...devices['iPhone 12'] },
-    // },
+    //Test against mobile viewports. 
+    {
+      name: 'Iphone 13 pro max Mobile Chrome',
+      use: {
+        ...devices['iPhone 13 Pro Max'],
+        headless: false,
+        screenshot: "on",
+      },
+
+    },
+    {
+      name: 'Mobile Safari',
+      use: {
+        ...devices['iPhone 12'],
+        headless: false,
+        screenshot: "on",
+      },
+    },
 
     /* Test against branded browsers. */
     // {
